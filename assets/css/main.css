@@ -1,5 +1,3 @@
----
----
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Epilogue:wght@300;400;500;600;700&display=swap');
 
 /* ══════════════════════════════════════════
@@ -26,12 +24,12 @@
   --radius:    6px;
   --radius-lg: 10px;
 
-  --pill-earned-bg:   #1a1916;
-  --pill-earned-text: #f5f2ee;
+  --pill-earned-bg:     #1a1916;
+  --pill-earned-text:   #f5f2ee;
   --pill-studying-bg:   #fef3c7;
   --pill-studying-text: #b45309;
-  --pill-planned-bg:   #edecea;
-  --pill-planned-text: #9b9890;
+  --pill-planned-bg:    #edecea;
+  --pill-planned-text:  #9b9890;
 }
 
 /* ══════════════════════════════════════════
@@ -51,12 +49,12 @@
   --ad-border: #3e3b35;
   --code-bg:   #242320;
 
-  --pill-earned-bg:   #f0ece4;
-  --pill-earned-text: #1a1916;
+  --pill-earned-bg:     #f0ece4;
+  --pill-earned-text:   #1a1916;
   --pill-studying-bg:   #422006;
   --pill-studying-text: #fcd34d;
-  --pill-planned-bg:   #242320;
-  --pill-planned-text: #5a5753;
+  --pill-planned-bg:    #242320;
+  --pill-planned-text:  #5a5753;
 }
 
 /* ══════════════════════════════════════════
@@ -519,7 +517,6 @@ button { font-family: inherit; }
   transform: translateX(3px);
 }
 
-/* Filtered state */
 .post-card.filtered-out {
   opacity: 0.12;
   pointer-events: none;
@@ -950,12 +947,11 @@ button { font-family: inherit; }
 }
 
 /* ══════════════════════════════════════════
-   INTERVIEW PREP (Q&A Accordion)
+   INTERVIEW PREP — Q&A Accordion
 ══════════════════════════════════════════ */
 .qa-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -976,15 +972,12 @@ button { font-family: inherit; }
   gap: 1rem;
   padding: 1.375rem 1.5rem;
   cursor: pointer;
-  list-style: none;
   width: 100%;
   background: none;
   border: none;
   text-align: left;
   color: var(--text);
 }
-
-.qa-question::-webkit-details-marker { display: none; }
 
 .qa-question-inner {
   display: flex;
@@ -1027,6 +1020,9 @@ button { font-family: inherit; }
   line-height: 1.75;
 }
 
+.qa-answer-inner p { margin-bottom: 0.75rem; }
+.qa-answer-inner p:last-child { margin-bottom: 0; }
+
 /* ══════════════════════════════════════════
    ABOUT PAGE
 ══════════════════════════════════════════ */
@@ -1042,8 +1038,6 @@ button { font-family: inherit; }
   margin: 3rem 0 1rem;
   color: var(--text);
 }
-
-.about-prose h2:first-child { margin-top: 0; }
 
 .about-prose p {
   font-family: var(--font-body);
@@ -1155,51 +1149,39 @@ button { font-family: inherit; }
 }
 
 /* ══════════════════════════════════════════
-   SKILL BARS — animate on scroll
-══════════════════════════════════════════ */
-.skills-grid.animated .skill-bar-fill {
-  /* JS sets width via inline style after animation triggers */
-}
-
-/* ══════════════════════════════════════════
    RESPONSIVE — Mobile
 ══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  /* Nav */
   .nav-links { display: none; }
   .nav-toggle { display: block; }
 
-  /* Hero */
   .hero { padding: 3.5rem 0 3rem; }
   .hero-title { font-size: clamp(2.25rem, 8vw, 3rem); }
 
-  /* Grids → single col */
   .posts-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
+
   .stat-strip { grid-template-columns: repeat(2, 1fr); }
   .stat-block { border-right: none; border-bottom: 1px solid var(--border); }
   .stat-block:nth-child(odd) { border-right: 1px solid var(--border); }
   .stat-block:last-child { border-bottom: none; }
 
-  /* Article */
   .article-wrap { grid-template-columns: 1fr; }
   .article-sidebar-col { display: none; }
   .article-header { padding: 2.5rem 0 1.75rem; }
 
-  /* Page header */
   .page-header { padding: 2.5rem 0 2rem; }
 
-  /* Certs */
   .cert-grid { grid-template-columns: 1fr; }
 
-  /* Footer */
   .site-footer { flex-direction: column; gap: 0.875rem; }
   .footer-links { flex-wrap: wrap; gap: 1rem; }
 }
 
 @media (max-width: 480px) {
-  .container, .container--narrow { padding: 0 1rem; }
+  .container,
+  .container--narrow { padding: 0 1rem; }
   .stat-strip { grid-template-columns: repeat(2, 1fr); }
   .hero-title { font-size: 2.25rem; }
 }
