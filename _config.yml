@@ -1,7 +1,7 @@
 title: Cyber Credo
 description: Intelligence from the trenches — real-world infosec experience.
-url: ""
-baseurl: ""
+url: "https://shreeprasaath.github.io"
+baseurl: "/cyber-credo"
 
 permalink: /blog/:slug/
 
