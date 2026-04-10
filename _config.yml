@@ -1,0 +1,25 @@
+title: Cyber Credo
+description: Intelligence from the trenches — real-world infosec experience.
+url: ""
+baseurl: ""
+
+permalink: /blog/:slug/
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default

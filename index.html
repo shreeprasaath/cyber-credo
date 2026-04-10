@@ -1,0 +1,71 @@
+---
+layout: default
+title: Home
+---
+
+<div class="container">
+  <section class="hero">
+    <div class="hero-eyebrow">cybersecurity · from the field</div>
+    <h1 class="hero-title">Intelligence from<br><em>the trenches</em></h1>
+    <p class="hero-sub">Real-world infosec experience, the tools I actually use, certs I hold, and the ones I'm chasing.</p>
+    <div class="hero-actions">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn--primary">read the blog</a>
+      <a href="{{ '/about/' | relative_url }}" class="btn">about me</a>
+    </div>
+  </section>
+
+  <!-- Latest posts -->
+  <div class="section-header">
+    <h2>latest posts</h2>
+    <a href="{{ '/blog/' | relative_url }}">all posts →</a>
+  </div>
+
+  <div class="posts-grid">
+    {% for post in site.posts limit:4 %}
+    <a href="{{ post.url | relative_url }}" class="post-card">
+      <div class="post-card-meta">
+        <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        {% if post.tags.first %}<span class="post-tag">{{ post.tags.first }}</span>{% endif %}
+      </div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+      <span class="post-card-arrow">read →</span>
+    </a>
+    {% endfor %}
+  </div>
+
+  <!-- In-feed ad: "Intelligence Update" -->
+  <div class="ad-zone ad-zone--infeed">
+    <div class="ad-zone__label">intelligence update <span>sponsored</span></div>
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  </div>
+
+  <!-- Skills snapshot -->
+  <div class="section-header">
+    <h2>current focus</h2>
+    <a href="{{ '/skills/' | relative_url }}">full stack →</a>
+  </div>
+
+  <div class="skills-grid" style="margin-bottom: 3rem;">
+    <div class="skill-card">
+      <h3>threat detection / SIEM</h3>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
+      <div class="skill-label"><span>Splunk · Sigma · ELK</span><span>82%</span></div>
+    </div>
+    <div class="skill-card">
+      <h3>network security</h3>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+      <div class="skill-label"><span>Wireshark · Snort · pfSense</span><span>75%</span></div>
+    </div>
+    <div class="skill-card">
+      <h3>scripting &amp; automation</h3>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:68%"></div></div>
+      <div class="skill-label"><span>Python · Bash · PowerShell</span><span>68%</span></div>
+    </div>
+    <div class="skill-card">
+      <h3>OSCP prep — studying</h3>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width:35%"></div></div>
+      <div class="skill-label"><span>Offensive Security</span><span>35%</span></div>
+    </div>
+  </div>
+</div>
