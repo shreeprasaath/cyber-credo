@@ -1,9 +1,13 @@
 <footer class="site-footer">
-  <div class="footer-logo">cyber credo</div>
+  <div class="footer-logo">
+    <span class="dot" aria-hidden="true"></span>cyber credo
+  </div>
   <ul class="footer-links">
     <li><a href="{{ '/blog/' | relative_url }}">blog</a></li>
+    <li><a href="{{ '/skills/' | relative_url }}">skills</a></li>
+    <li><a href="{{ '/certifications/' | relative_url }}">certs</a></li>
     <li><a href="{{ '/about/' | relative_url }}">about</a></li>
-    <li><a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">github</a></li>
+    <li><a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">github</a></li>
   </ul>
   <div class="footer-copy">&copy; {{ site.time | date: "%Y" }} cyber credo</div>
 </footer>

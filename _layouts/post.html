@@ -3,49 +3,59 @@ layout: default
 ---
 
 <div class="container--narrow">
-  <div class="article-header">
+  <header class="article-header">
     {% if page.tags %}
       {% for tag in page.tags limit:1 %}
-        <div class="post-tag">{{ tag }}</div>
+        <span class="post-tag">{{ tag }}</span>
       {% endfor %}
     {% endif %}
     <h1 class="article-title">{{ page.title }}</h1>
     <div class="article-meta">
-      {{ page.date | date: "%b %d, %Y" }}
-      {% if page.read_time %} · {{ page.read_time }} min read{% endif %}
+      {{ page.date | date: "%b %d, %Y" }}{% if page.read_time %} &middot; {{ page.read_time }} min read{% endif %}
     </div>
-  </div>
+  </header>
 </div>
 
 <div class="container">
   <div class="article-wrap">
-    <div class="article-main">
+
+    <main class="article-main">
       <div class="prose">
         {{ content }}
       </div>
 
-      <!-- End-of-content ad: "Recommended reading" -->
+      <!-- End-of-article ad zone -->
       <div class="ad-zone ad-zone--end">
-        <div class="ad-zone__label">Recommended reading <span>sponsored</span></div>
-        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
+        <div class="ad-zone__label">
+          recommended reading
+          <span class="ad-sponsored">sponsored</span>
+        </div>
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ADSENSE_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
       </div>
 
-      <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-        <a href="{{ '/blog/' | relative_url }}" style="font-family: var(--mono); font-size: 13px; color: var(--muted);">← all posts</a>
+      <div class="article-back">
+        <a href="{{ '/blog/' | relative_url }}">&larr; all posts</a>
       </div>
-    </div>
+    </main>
 
-    <div class="article-sidebar-col">
-      <!-- Sidebar ad 1: contextual -->
-      <div class="ad-zone ad-zone--sidebar" style="margin-bottom: 1rem;">
-        <div class="ad-zone__label">Sponsor <span>sponsored</span></div>
-        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
+    <aside class="article-sidebar-col">
+      <!-- Sidebar ad 1 -->
+      <div class="ad-zone ad-zone--sidebar">
+        <div class="ad-zone__label">
+          sponsor
+          <span class="ad-sponsored">sponsored</span>
+        </div>
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ADSENSE_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
       </div>
       <!-- Sidebar ad 2 -->
       <div class="ad-zone ad-zone--sidebar">
-        <div class="ad-zone__label">Sponsor <span>sponsored</span></div>
-        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
+        <div class="ad-zone__label">
+          sponsor
+          <span class="ad-sponsored">sponsored</span>
+        </div>
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ADSENSE_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
       </div>
-    </div>
+    </aside>
+
   </div>
 </div>
