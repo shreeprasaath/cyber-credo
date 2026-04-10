@@ -4,38 +4,138 @@ title: Interview Prep
 permalink: /interview-prep/
 ---
 
-<div class="container">
+<div class="container--narrow">
+
   <div class="page-header">
     <div class="eyebrow">career</div>
     <h1>Interview prep</h1>
-    <p>SOC analyst, blue team, and infosec interview questions I've collected and answered from experience.</p>
+    <p>SOC analyst, blue team, and infosec interview questions — collected and answered from field experience.</p>
   </div>
 
-  <!-- Certification partner ad — high intent page -->
+  <!-- Certification partner ad — high-intent placement -->
   <div class="ad-zone ad-zone--partner" style="margin-bottom:2.5rem;">
-    <div class="ad-zone__label">certification partner <span>sponsored</span></div>
-    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
+    <div class="ad-zone__label">
+      certification partner
+      <span class="ad-sponsored">sponsored</span>
+    </div>
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ADSENSE_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
   </div>
 
+  <!-- Blue team Q&A -->
   <div class="section-header" style="padding-top:0;">
     <h2>blue team questions</h2>
   </div>
-  <div style="display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--border);margin-bottom:2rem;">
-    <div class="post-card" style="cursor:default;">
-      <div class="post-card-meta"><span class="post-tag">fundamentals</span></div>
-      <h3>What is the difference between IDS and IPS?</h3>
-      <p>An IDS (Intrusion Detection System) monitors and alerts on suspicious traffic. An IPS (Intrusion Prevention System) actively blocks it inline. The key distinction is passive observation vs active intervention...</p>
+
+  <div class="qa-list">
+
+    <div class="qa-card">
+      <button class="qa-question" aria-expanded="false">
+        <div class="qa-question-inner">
+          <span class="post-tag">fundamentals</span>
+          <h3>What is the difference between IDS and IPS?</h3>
+        </div>
+        <svg class="qa-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="qa-answer" role="region">
+        <div class="qa-answer-inner">
+          <p>An IDS (Intrusion Detection System) passively monitors network traffic and generates alerts when suspicious activity is detected — it does not take action. An IPS (Intrusion Prevention System) sits inline with traffic and actively blocks threats in real time.</p>
+          <p>The key distinction: <strong>IDS observes, IPS intervenes.</strong> IDS is placed out-of-band (receives a copy of traffic via SPAN/TAP). IPS is deployed inline, which means a misconfiguration can block legitimate traffic — so tuning matters. In modern deployments, NGFW with IPS capabilities often replaces standalone IPS devices.</p>
+        </div>
+      </div>
     </div>
-    <div class="post-card" style="cursor:default;">
-      <div class="post-card-meta"><span class="post-tag">threat intel</span></div>
-      <h3>Describe the Cyber Kill Chain phases.</h3>
-      <p>Reconnaissance → Weaponization → Delivery → Exploitation → Installation → C2 → Actions on Objectives. In practice, defenders focus on breaking the chain as early as possible...</p>
+
+    <div class="qa-card">
+      <button class="qa-question" aria-expanded="false">
+        <div class="qa-question-inner">
+          <span class="post-tag">threat intel</span>
+          <h3>Describe the Cyber Kill Chain phases.</h3>
+        </div>
+        <svg class="qa-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="qa-answer" role="region">
+        <div class="qa-answer-inner">
+          <p>The Lockheed Martin Cyber Kill Chain describes 7 stages of an attack: <strong>Reconnaissance → Weaponization → Delivery → Exploitation → Installation → Command &amp; Control (C2) → Actions on Objectives.</strong></p>
+          <p>From a defender's perspective, breaking the chain as early as possible is the goal. Stopping delivery (e.g., email filtering) is easier than containing an attacker who has already reached C2. MITRE ATT&amp;CK extends this model with granular tactics and techniques mapped to real-world threat groups.</p>
+        </div>
+      </div>
     </div>
-    <div class="post-card" style="cursor:default;">
-      <div class="post-card-meta"><span class="post-tag">incident response</span></div>
-      <h3>Walk me through your incident response process.</h3>
-      <p>Preparation → Identification → Containment → Eradication → Recovery → Lessons Learned. I start by establishing scope and severity, then isolate affected systems before any remediation...</p>
+
+    <div class="qa-card">
+      <button class="qa-question" aria-expanded="false">
+        <div class="qa-question-inner">
+          <span class="post-tag">incident response</span>
+          <h3>Walk me through your incident response process.</h3>
+        </div>
+        <svg class="qa-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="qa-answer" role="region">
+        <div class="qa-answer-inner">
+          <p>NIST SP 800-61 defines four phases: <strong>Preparation → Detection &amp; Analysis → Containment, Eradication &amp; Recovery → Post-Incident Activity.</strong></p>
+          <p>In practice: start with scope and severity — is this a false positive or confirmed incident? Then isolate affected systems before any remediation to preserve evidence and prevent lateral spread. Document everything with timestamps. After recovery, a lessons-learned review identifies gaps in detection and response playbooks.</p>
+        </div>
+      </div>
     </div>
-    <!-- Add more Q&A cards here -->
+
+    <div class="qa-card">
+      <button class="qa-question" aria-expanded="false">
+        <div class="qa-question-inner">
+          <span class="post-tag">SIEM</span>
+          <h3>How do you tune a SIEM to reduce alert fatigue?</h3>
+        </div>
+        <svg class="qa-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="qa-answer" role="region">
+        <div class="qa-answer-inner">
+          <p>Alert fatigue is one of the top SOC challenges. Tuning strategy: first, baseline normal — understand what your environment's "noisy" processes are. Then whitelisting known-good infrastructure (vulnerability scanners, backup jobs, monitoring tools) eliminates a significant chunk of false positives.</p>
+          <p>From there, tighten detection logic with conditions: correlate multiple events (failed login + successful login from different IP) rather than alerting on single events. Review each rule's signal-to-noise ratio quarterly. Severity thresholds matter — not every alert needs to be high priority.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <button class="qa-question" aria-expanded="false">
+        <div class="qa-question-inner">
+          <span class="post-tag">threat hunting</span>
+          <h3>What is threat hunting and how does it differ from detection?</h3>
+        </div>
+        <svg class="qa-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="qa-answer" role="region">
+        <div class="qa-answer-inner">
+          <p>Detection is reactive — rules and signatures fire on known bad behavior. Threat hunting is proactive — assuming a breach has occurred and searching for evidence of an attacker who is evading your existing controls.</p>
+          <p>A hunt starts with a hypothesis (e.g., "Is there an attacker living off the land using LOLBins?") and uses raw logs, endpoint telemetry, and network data to either confirm or disprove it. Successful hunts result in new detection rules, closing the gap for future automated coverage.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <button class="qa-question" aria-expanded="false">
+        <div class="qa-question-inner">
+          <span class="post-tag">networking</span>
+          <h3>Explain the OSI model from a security perspective.</h3>
+        </div>
+        <svg class="qa-caret" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="qa-answer" role="region">
+        <div class="qa-answer-inner">
+          <p>Each OSI layer has distinct attack surfaces. Layer 1 (Physical): hardware tampering, rogue devices. Layer 2 (Data Link): ARP spoofing, MAC flooding, VLAN hopping. Layer 3 (Network): IP spoofing, ICMP tunneling. Layer 4 (Transport): SYN floods, port scanning. Layers 5-6: session hijacking, SSL stripping. Layer 7 (Application): SQLi, XSS, SSRF — the richest attack surface.</p>
+          <p>Defense-in-depth means controls at multiple layers: firewalls (L3-4), WAFs (L7), network segmentation (L2), and endpoint detection (L7+). Understanding which layer an attack targets helps map it to the right control.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </div>

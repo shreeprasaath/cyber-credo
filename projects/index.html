@@ -5,31 +5,63 @@ permalink: /projects/
 ---
 
 <div class="container">
+
   <div class="page-header">
     <div class="eyebrow">work</div>
     <h1>Projects</h1>
     <p>Tools I've built, labs I've run, and experiments I've documented.</p>
   </div>
 
-  <div class="posts-grid" style="margin-bottom:2rem;">
-    <div class="post-card">
+  <div class="section-header" style="padding-top:0;">
+    <h2>open source &amp; labs</h2>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card">
       <div class="post-card-meta">
         <span class="post-tag">home lab</span>
         <span class="post-tag">SIEM</span>
       </div>
       <h3>SOC home lab — Splunk + ELK stack</h3>
-      <p>A full detection lab with simulated attack traffic, custom Sigma rules, and alerting pipelines.</p>
-      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener" class="post-card-arrow" style="display:inline-block;">github →</a>
+      <p>A full detection lab with simulated attack traffic, custom Sigma rules, and alerting pipelines. Documented the full build from scratch including network segmentation and log forwarding.</p>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="post-card-arrow" style="display:inline-block;">github &rarr;</a>
     </div>
-    <div class="post-card">
+    <div class="project-card">
       <div class="post-card-meta">
         <span class="post-tag">python</span>
         <span class="post-tag">automation</span>
       </div>
       <h3>Log parser &amp; threat tagger</h3>
-      <p>Python script that ingests raw firewall logs and tags events against MITRE ATT&amp;CK techniques.</p>
-      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener" class="post-card-arrow" style="display:inline-block;">github →</a>
+      <p>Python script that ingests raw firewall logs and tags events against MITRE ATT&amp;CK techniques. Outputs a structured JSON report for ingestion into a SIEM or review pipeline.</p>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="post-card-arrow" style="display:inline-block;">github &rarr;</a>
     </div>
-    <!-- Add more projects here — same card structure -->
+    <div class="project-card">
+      <div class="post-card-meta">
+        <span class="post-tag">sigma</span>
+        <span class="post-tag">detection</span>
+      </div>
+      <h3>Sigma rule library</h3>
+      <p>A curated collection of Sigma detection rules for common blue team scenarios, tested against real log samples and organized by MITRE ATT&amp;CK tactic.</p>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="post-card-arrow" style="display:inline-block;">github &rarr;</a>
+    </div>
+    <div class="project-card">
+      <div class="post-card-meta">
+        <span class="post-tag">bash</span>
+        <span class="post-tag">hardening</span>
+      </div>
+      <h3>Linux hardening checklist &amp; script</h3>
+      <p>Automated CIS benchmark hardening script for Ubuntu/Debian systems. Covers SSH configuration, kernel parameters, auditd rules, and password policies.</p>
+      <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="post-card-arrow" style="display:inline-block;">github &rarr;</a>
+    </div>
   </div>
+
+  <!-- In-feed ad -->
+  <div class="ad-zone ad-zone--infeed">
+    <div class="ad-zone__label">
+      intelligence update
+      <span class="ad-sponsored">sponsored</span>
+    </div>
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ADSENSE_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
+  </div>
+
 </div>

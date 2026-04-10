@@ -5,42 +5,53 @@ permalink: /blog/
 ---
 
 <div class="container">
+
   <div class="page-header">
     <div class="eyebrow">writing</div>
     <h1>All posts</h1>
     <p>Field notes, tool breakdowns, and lessons from the SOC floor.</p>
   </div>
 
-  <!-- Tag filters (JS-driven) -->
-  <div class="tag-list" id="tag-filters">
+  <!-- Tag filter row -->
+  <div class="tag-list" id="tag-filters" role="group" aria-label="Filter posts by tag">
     <button class="tag-filter active" data-tag="all">all</button>
     {% assign all_tags = site.posts | map: "tags" | join: "," | split: "," | uniq | sort %}
     {% for tag in all_tags %}
-      <button class="tag-filter" data-tag="{{ tag | strip }}">{{ tag | strip }}</button>
+      {% assign t = tag | strip %}
+      {% if t != "" %}
+        <button class="tag-filter" data-tag="{{ t }}">{{ t }}</button>
+      {% endif %}
     {% endfor %}
   </div>
 
+  <!-- Post card grid -->
   <div class="posts-grid" id="posts-grid">
     {% for post in site.posts %}
-    <a href="{{ post.url | relative_url }}" class="post-card" data-tags="{{ post.tags | join: ',' }}">
+    <a href="{{ post.url | relative_url }}"
+       class="post-card"
+       data-tags="{{ post.tags | join: ',' }}">
       <div class="post-card-meta">
         <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
         {% if post.tags.first %}<span class="post-tag">{{ post.tags.first }}</span>{% endif %}
       </div>
       <h3>{{ post.title }}</h3>
       <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
-      <span class="post-card-arrow">read →</span>
+      <span class="post-card-arrow">read &rarr;</span>
     </a>
 
     <!-- In-feed ad every 4 posts -->
     {% assign post_index = forloop.index %}
     {% assign mod = post_index | modulo: 4 %}
     {% if mod == 0 and forloop.last == false %}
-    <div class="ad-zone ad-zone--infeed" style="grid-column: 1 / -1;">
-      <div class="ad-zone__label">intelligence update <span>sponsored</span></div>
-      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
+    <div class="ad-zone ad-zone--infeed ad-zone--infeed-grid">
+      <div class="ad-zone__label">
+        intelligence update
+        <span class="ad-sponsored">sponsored</span>
+      </div>
+      <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ADSENSE_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
     </div>
     {% endif %}
     {% endfor %}
   </div>
+
 </div>
