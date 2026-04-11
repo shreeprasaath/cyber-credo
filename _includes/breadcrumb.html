@@ -1,0 +1,59 @@
+{% unless page.url == "/" %}
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="{{ '/' | relative_url }}" itemprop="item"><span itemprop="name">home</span></a>
+        <meta itemprop="position" content="1" />
+      </li>
+
+      {% if page.layout == "post" %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ '/blog/' | relative_url }}" itemprop="item"><span itemprop="name">blog</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb-current" itemprop="name">{{ page.title | downcase | truncate: 55, "…" }}</span>
+          <meta itemprop="position" content="3" />
+        </li>
+
+      {% elsif page.url contains '/blog' %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li><span class="breadcrumb-current">blog</span></li>
+
+      {% elsif page.url contains '/skills' %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li><span class="breadcrumb-current">topics</span></li>
+
+      {% elsif page.url contains '/videos' %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li><span class="breadcrumb-current">videos</span></li>
+
+      {% elsif page.url contains '/about' %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li><span class="breadcrumb-current">about</span></li>
+
+      {% elsif page.url contains '/certifications' %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li><span class="breadcrumb-current">certifications</span></li>
+
+      {% elsif page.url contains '/interview-prep' %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li><span class="breadcrumb-current">interview prep</span></li>
+
+      {% elsif page.url contains '/projects' %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li><span class="breadcrumb-current">projects</span></li>
+
+      {% else %}
+        <li aria-hidden="true"><span class="breadcrumb-sep">/</span></li>
+        <li><span class="breadcrumb-current">{{ page.title | downcase }}</span></li>
+      {% endif %}
+
+    </ol>
+  </div>
+</nav>
+{% endunless %}

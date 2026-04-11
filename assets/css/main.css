@@ -255,6 +255,55 @@ button { font-family: inherit; }
 }
 
 /* ══════════════════════════════════════════
+   BREADCRUMB
+══════════════════════════════════════════ */
+.breadcrumb-nav {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0.625rem 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  padding: 0 4px;
+  transition: color 0.15s;
+}
+
+.breadcrumb li:first-child a {
+  padding-left: 0;
+}
+
+.breadcrumb a:hover {
+  color: var(--text);
+}
+
+.breadcrumb-sep {
+  color: var(--faint);
+  padding: 0 2px;
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: var(--text);
+  padding: 0 4px;
+}
+
+/* ══════════════════════════════════════════
    LAYOUT
 ══════════════════════════════════════════ */
 .container {
