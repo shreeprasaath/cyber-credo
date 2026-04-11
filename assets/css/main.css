@@ -1126,18 +1126,89 @@ button { font-family: inherit; }
 }
 
 .topic-card:hover {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--_hover-bg, var(--bg));
+  color: var(--_hover-text, var(--text));
 }
 
 .topic-card.active {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--_active-bg, var(--text));
+  color: var(--_active-text, var(--bg));
 }
 
-[data-theme="dark"] .topic-card.active {
-  background: var(--text);
-  color: var(--bg);
+/* ── Per-topic colors — light mode ── */
+.topic-card[data-topic="siem"] {
+  --_hover-bg: #dbeafe; --_hover-text: #1d4ed8;
+  --_active-bg: #1d4ed8; --_active-text: #ffffff;
+}
+.topic-card[data-topic="edr"] {
+  --_hover-bg: #ede9fe; --_hover-text: #5b21b6;
+  --_active-bg: #5b21b6; --_active-text: #ffffff;
+}
+.topic-card[data-topic="waf"] {
+  --_hover-bg: #ffedd5; --_hover-text: #c2410c;
+  --_active-bg: #c2410c; --_active-text: #ffffff;
+}
+.topic-card[data-topic="ir"] {
+  --_hover-bg: #fee2e2; --_hover-text: #b91c1c;
+  --_active-bg: #b91c1c; --_active-text: #ffffff;
+}
+.topic-card[data-topic="vmdr"] {
+  --_hover-bg: #d1fae5; --_hover-text: #065f46;
+  --_active-bg: #065f46; --_active-text: #ffffff;
+}
+.topic-card[data-topic="ti"] {
+  --_hover-bg: #fef3c7; --_hover-text: #92400e;
+  --_active-bg: #92400e; --_active-text: #ffffff;
+}
+.topic-card[data-topic="offsec"] {
+  --_hover-bg: #ffe4e6; --_hover-text: #be123c;
+  --_active-bg: #be123c; --_active-text: #ffffff;
+}
+.topic-card[data-topic="malware"] {
+  --_hover-bg: #e0e7ff; --_hover-text: #3730a3;
+  --_active-bg: #3730a3; --_active-text: #ffffff;
+}
+.topic-card[data-topic="linux"] {
+  --_hover-bg: #e2e8f0; --_hover-text: #334155;
+  --_active-bg: #334155; --_active-text: #ffffff;
+}
+
+/* ── Per-topic colors — dark mode ── */
+[data-theme="dark"] .topic-card[data-topic="siem"] {
+  --_hover-bg: #1e3a5f; --_hover-text: #93c5fd;
+  --_active-bg: #2563eb; --_active-text: #ffffff;
+}
+[data-theme="dark"] .topic-card[data-topic="edr"] {
+  --_hover-bg: #2d1b69; --_hover-text: #c4b5fd;
+  --_active-bg: #6d28d9; --_active-text: #ffffff;
+}
+[data-theme="dark"] .topic-card[data-topic="waf"] {
+  --_hover-bg: #431407; --_hover-text: #fb923c;
+  --_active-bg: #ea580c; --_active-text: #ffffff;
+}
+[data-theme="dark"] .topic-card[data-topic="ir"] {
+  --_hover-bg: #450a0a; --_hover-text: #fca5a5;
+  --_active-bg: #dc2626; --_active-text: #ffffff;
+}
+[data-theme="dark"] .topic-card[data-topic="vmdr"] {
+  --_hover-bg: #052e16; --_hover-text: #6ee7b7;
+  --_active-bg: #059669; --_active-text: #ffffff;
+}
+[data-theme="dark"] .topic-card[data-topic="ti"] {
+  --_hover-bg: #422006; --_hover-text: #fcd34d;
+  --_active-bg: #d97706; --_active-text: #ffffff;
+}
+[data-theme="dark"] .topic-card[data-topic="offsec"] {
+  --_hover-bg: #4c0519; --_hover-text: #fda4af;
+  --_active-bg: #e11d48; --_active-text: #ffffff;
+}
+[data-theme="dark"] .topic-card[data-topic="malware"] {
+  --_hover-bg: #1e1b4b; --_hover-text: #a5b4fc;
+  --_active-bg: #4338ca; --_active-text: #ffffff;
+}
+[data-theme="dark"] .topic-card[data-topic="linux"] {
+  --_hover-bg: #0f172a; --_hover-text: #94a3b8;
+  --_active-bg: #475569; --_active-text: #ffffff;
 }
 
 /* ══════════════════════════════════════════
