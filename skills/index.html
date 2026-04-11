@@ -7,124 +7,90 @@ permalink: /skills/
 <div class="container">
 
   <div class="page-header">
-    <div class="eyebrow">coverage map</div>
-    <h1>Topics covered</h1>
-    <p>A breakdown of the domains covered across guides, walkthroughs, and projects on this site — with depth of coverage and key tools referenced.</p>
+    <div class="eyebrow">browse by topic</div>
+    <h1>Topics</h1>
+    <p>Select a topic to see all related guides, walkthroughs, and articles.</p>
   </div>
 
-  <!-- Core topics -->
+  <!-- Topic cards -->
+  <div class="topic-grid" role="group" aria-label="Filter by topic">
+    <button class="topic-card active" data-topic="all">All</button>
+    <button class="topic-card" data-topic="siem">SIEM</button>
+    <button class="topic-card" data-topic="edr">EDR</button>
+    <button class="topic-card" data-topic="waf">WAF</button>
+    <button class="topic-card" data-topic="ir">IR</button>
+    <button class="topic-card" data-topic="vmdr">VMDR</button>
+    <button class="topic-card" data-topic="ti">TI</button>
+    <button class="topic-card" data-topic="offsec">OffSec</button>
+    <button class="topic-card" data-topic="malware">Malware Analysis</button>
+    <button class="topic-card" data-topic="linux">Linux</button>
+  </div>
+
+  <!-- Section heading -->
   <div class="section-header" style="padding-top:0;">
-    <h2>core topics</h2>
+    <h2 id="topics-grid-heading">all guides</h2>
   </div>
 
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h3>SIEM &amp; log analysis</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="85"></div>
+  <!-- Posts filtered by topic -->
+  <div class="posts-grid" id="topics-posts-grid">
+    {% for post in site.posts %}
+    <a href="{{ post.url | relative_url }}"
+       class="post-card"
+       data-tags="{{ post.tags | join: ',' | downcase }}">
+      <div class="post-card-meta">
+        <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        {% if post.tags.first %}<span class="post-tag">{{ post.tags.first }}</span>{% endif %}
       </div>
-      <div class="skill-meta">
-        <span>Splunk &middot; ELK &middot; Sigma rules</span>
-        <span>deep coverage</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>network security</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="78"></div>
-      </div>
-      <div class="skill-meta">
-        <span>Wireshark &middot; Snort &middot; pfSense</span>
-        <span>deep coverage</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>scripting &amp; automation</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="72"></div>
-      </div>
-      <div class="skill-meta">
-        <span>Python &middot; Bash &middot; PowerShell</span>
-        <span>strong coverage</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>incident response</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="70"></div>
-      </div>
-      <div class="skill-meta">
-        <span>DFIR &middot; forensics &middot; triage</span>
-        <span>strong coverage</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>vulnerability management</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="65"></div>
-      </div>
-      <div class="skill-meta">
-        <span>Nessus &middot; OpenVAS &middot; CVE triage</span>
-        <span>solid coverage</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>threat intelligence</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="60"></div>
-      </div>
-      <div class="skill-meta">
-        <span>MITRE ATT&amp;CK &middot; OSINT</span>
-        <span>solid coverage</span>
-      </div>
-    </div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+      <span class="post-card-arrow">read &rarr;</span>
+    </a>
+    {% endfor %}
   </div>
 
-  <!-- In-feed ad between sections -->
-  <div class="ad-zone ad-zone--infeed">
-    <div class="ad-zone__label">
-      intelligence update
-      <span class="ad-sponsored">sponsored</span>
-    </div>
-    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="YOUR_ADSENSE_ID" data-ad-slot="YOUR_SLOT" data-ad-format="auto"></ins> -->
-  </div>
-
-  <!-- Expanding topics -->
-  <div class="section-header">
-    <h2>expanding coverage</h2>
-  </div>
-
-  <div class="skills-grid" style="margin-bottom:3rem;">
-    <div class="skill-card">
-      <h3>offensive security</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="38"></div>
-      </div>
-      <div class="skill-meta">
-        <span>OSCP path &middot; HTB &middot; THM</span>
-        <span>growing</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>cloud security</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="30"></div>
-      </div>
-      <div class="skill-meta">
-        <span>AWS Security &middot; IAM &middot; GuardDuty</span>
-        <span>growing</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <h3>malware analysis</h3>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="22"></div>
-      </div>
-      <div class="skill-meta">
-        <span>Ghidra &middot; x64dbg &middot; sandbox</span>
-        <span>early</span>
-      </div>
-    </div>
+  <!-- Empty state -->
+  <div id="topics-empty" style="display:none; padding:3rem 0; text-align:center;">
+    <p style="font-family:var(--font-mono); font-size:13px; color:var(--faint);">No guides published yet for this topic — check back soon.</p>
   </div>
 
 </div>
+
+<script>
+(function () {
+  var topicCards = document.querySelectorAll('.topic-card');
+  var postCards  = document.querySelectorAll('#topics-posts-grid .post-card');
+  var emptyState = document.getElementById('topics-empty');
+  var heading    = document.getElementById('topics-grid-heading');
+  var grid       = document.getElementById('topics-posts-grid');
+
+  topicCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      var topic = card.dataset.topic;
+
+      // Update active pill
+      topicCards.forEach(function (c) { c.classList.remove('active'); });
+      card.classList.add('active');
+
+      // Update heading
+      if (heading) {
+        heading.textContent = topic === 'all' ? 'all guides' : topic + ' guides';
+      }
+
+      // Filter cards
+      var visible = 0;
+      postCards.forEach(function (post) {
+        var tags = (post.dataset.tags || '').toLowerCase();
+        var match = topic === 'all' || tags.split(',').some(function (t) {
+          return t.trim() === topic.toLowerCase();
+        });
+        post.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+
+      // Toggle grid border/bg visibility and empty state
+      if (emptyState) emptyState.style.display = visible === 0 ? 'block' : 'none';
+      if (grid) grid.style.display = visible === 0 ? 'none' : '';
+    });
+  });
+})();
+</script>
