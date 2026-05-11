@@ -1,14 +1,15 @@
 <nav class="site-nav">
   <a href="{{ '/' | relative_url }}" class="nav-logo" aria-label="Cyber Credo home">
-    <span class="dot" aria-hidden="true"></span>cyber credo
+    <span class="nav-logo-icon" aria-hidden="true">🛡️</span>
+    cyber credo
   </a>
 
   <div class="nav-right">
     <ul class="nav-links" aria-label="Main navigation">
-      <li><a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} class="active" aria-current="page"{% endif %}>blog</a></li>
-      <li><a href="{{ '/skills/' | relative_url }}"{% if page.url contains '/skills' %} class="active" aria-current="page"{% endif %}>topics</a></li>
-      <li><a href="{{ '/videos/' | relative_url }}"{% if page.url contains '/videos' %} class="active" aria-current="page"{% endif %}>videos</a></li>
-      <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active" aria-current="page"{% endif %}>about</a></li>
+      <li><a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} class="active" aria-current="page"{% endif %}>Blog</a></li>
+      <li><a href="{{ '/skills/' | relative_url }}"{% if page.url contains '/skills' %} class="active" aria-current="page"{% endif %}>Topics</a></li>
+      <li><a href="{{ '/videos/' | relative_url }}"{% if page.url contains '/videos' %} class="active" aria-current="page"{% endif %}>Videos</a></li>
+      <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active" aria-current="page"{% endif %}>About</a></li>
     </ul>
 
     <button class="theme-toggle" id="theme-toggle" aria-label="Switch theme" title="Toggle dark/light mode">
@@ -34,10 +35,9 @@
   </div>
 </nav>
 
-<!-- Mobile nav drawer -->
 <div class="nav-drawer" id="nav-drawer" role="navigation" aria-label="Mobile navigation">
-  <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} class="active"{% endif %}>blog</a>
-  <a href="{{ '/skills/' | relative_url }}"{% if page.url contains '/skills' %} class="active"{% endif %}>topics</a>
-  <a href="{{ '/videos/' | relative_url }}"{% if page.url contains '/videos' %} class="active"{% endif %}>videos</a>
-  <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active"{% endif %}>about</a>
+  <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog' %} class="active"{% endif %}>Blog</a>
+  <a href="{{ '/skills/' | relative_url }}"{% if page.url contains '/skills' %} class="active"{% endif %}>Topics</a>
+  <a href="{{ '/videos/' | relative_url }}"{% if page.url contains '/videos' %} class="active"{% endif %}>Videos</a>
+  <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about' %} class="active"{% endif %}>About</a>
 </div>
