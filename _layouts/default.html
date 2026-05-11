@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <!-- Theme: set before paint to prevent FOUC -->
+  <!-- Theme: light by default, dark only if user has explicitly chosen it -->
   <script>
     (function(){
       var s=localStorage.getItem('cc-theme');
-      var p=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-      document.documentElement.dataset.theme=s||p;
+      document.documentElement.dataset.theme=s||'light';
     })();
   </script>
   <meta charset="UTF-8">
