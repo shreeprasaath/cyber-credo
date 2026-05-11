@@ -5,21 +5,107 @@ title: Home
 
 <div class="container">
 
-  <!-- Hero -->
+  <!-- ═══════════════ HERO ═══════════════ -->
   <section class="hero">
-    <div class="hero-badge">🛡️ Practical cybersecurity · blue team focus</div>
-    <h1 class="hero-title">
-      Level up your<br>
-      <span class="hero-gradient">security skills</span>
-    </h1>
-    <p class="hero-sub">Hands-on guides from a blue team practitioner. Real tools, real techniques, real lab environments — built for defenders who think like attackers.</p>
-    <div class="hero-actions">
-      <a href="{{ '/blog/' | relative_url }}" class="btn btn--primary btn--lg">Start Learning →</a>
-      <a href="{{ '/videos/' | relative_url }}" class="btn btn--lg">Watch Videos</a>
+
+    <!-- Left: text -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Practical Cybersecurity · Blue Team Focus
+      </div>
+      <h1 class="hero-title">
+        Learn,<br>
+        <span class="hero-green">Detect,</span>
+        Defend!
+      </h1>
+      <p class="hero-sub">Hands-on guides from a blue team practitioner. Master SIEM, EDR, Threat Hunting, Incident Response — and become the defender your team needs.</p>
+      <div class="hero-actions">
+        <a href="{{ '/blog/' | relative_url }}" class="btn btn--primary btn--lg">Start Learning Free →</a>
+        <a href="{{ '/skills/' | relative_url }}" class="btn btn--ghost btn--lg">Browse Topics</a>
+      </div>
+    </div>
+
+    <!-- Right: course progress widget -->
+    <div class="hero-widget">
+
+      <!-- Decorative stickers -->
+      <div class="sticker sticker--tr" aria-hidden="true">🎯</div>
+      <div class="sticker sticker--br" aria-hidden="true">⭐</div>
+      <div class="sticker sticker--bl" aria-hidden="true">🔐</div>
+
+      <!-- Main card -->
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-icon" aria-hidden="true">📊</div>
+          <div>
+            <div class="hero-card-title">SIEM Fundamentals</div>
+            <div class="hero-card-meta">12 articles · 3h reading</div>
+          </div>
+        </div>
+        <div class="hero-card-progress-row">
+          <span class="hero-card-progress-label">Progress</span>
+          <span class="hero-card-progress-pct">65%</span>
+        </div>
+        <div class="hero-card-bar">
+          <div class="hero-card-bar-fill" style="width: 65%"></div>
+        </div>
+        <a href="{{ '/blog/' | relative_url }}" class="hero-card-btn">Continue Learning →</a>
+      </div>
+
     </div>
   </section>
 
-  <!-- Stats -->
+  <!-- ═══════════════ FEATURES ═══════════════ -->
+  <section class="features-section">
+    <div class="section-eyebrow">Why Choose Us</div>
+    <h2 class="features-heading">Everything You Need to Succeed</h2>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--pink">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3>Learn at Your Pace</h3>
+        <p>Access guides anytime, anywhere. Revisit techniques and build your knowledge on your own schedule.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--teal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>From the Trenches</h3>
+        <p>Every guide is written by a practitioner doing real blue team work — not summarising vendor docs.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--lavender">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+        </div>
+        <h3>Real Labs &amp; Tools</h3>
+        <p>Walk through actual tool configurations, lab setups, and detection logic — not just theory.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon feature-icon--green">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Community Tested</h3>
+        <p>Techniques validated by SOC analysts, detection engineers, and IR practitioners in production environments.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ STATS ═══════════════ -->
   <div class="stat-strip-clay">
     <div class="stat-clay">
       <span class="stat-number">50+</span>
@@ -39,9 +125,9 @@ title: Home
     </div>
   </div>
 
-  <!-- Course Catalog -->
+  <!-- ═══════════════ COURSE CATALOG ═══════════════ -->
   <section class="courses-section">
-    <h2>What you'll learn</h2>
+    <h2>What You'll Learn</h2>
     <p>Nine domains of blue team and offensive security knowledge — from fundamentals to advanced detection engineering.</p>
     <div class="courses-grid">
       <a href="{{ '/skills/' | relative_url }}" class="course-card course-card--blue">
@@ -86,11 +172,11 @@ title: Home
     </div>
   </section>
 
-  <!-- Progress Tracking Demo -->
+  <!-- ═══════════════ PROGRESS DEMO ═══════════════ -->
   <section class="progress-section">
     <div class="progress-section-inner">
       <div class="progress-section-header">
-        <h2>📍 Suggested learning path</h2>
+        <h2>📍 Your Learning Path</h2>
         <p>A structured journey from fundamentals to advanced blue team operations.</p>
       </div>
       <div class="learning-path">
@@ -108,7 +194,7 @@ title: Home
           <div class="path-step-info">
             <h4>SIEM Fundamentals</h4>
             <span class="step-meta">Log ingestion, SPL/KQL queries, correlation rules, alert logic</span>
-            <div class="path-progress-bar"><div style="width:60%"></div></div>
+            <div class="path-progress-bar"><div style="width:65%"></div></div>
           </div>
           <span class="step-badge step-badge--active">In Progress</span>
         </div>
@@ -116,7 +202,7 @@ title: Home
           <div class="path-step-circle">🔒</div>
           <div class="path-step-info">
             <h4>Threat Hunting</h4>
-            <span class="step-meta">Hypothesis-driven hunting, behavioural analytics, MITRE ATT&CK mapping</span>
+            <span class="step-meta">Hypothesis-driven hunting, behavioural analytics, MITRE ATT&amp;CK mapping</span>
             <div class="path-progress-bar"><div style="width:0%"></div></div>
           </div>
           <span class="step-badge step-badge--locked">Up Next</span>
@@ -134,9 +220,9 @@ title: Home
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
   <section class="testimonials-section">
-    <h2>From the community</h2>
+    <h2>From the Community</h2>
     <p>What security practitioners say about the guides here.</p>
     <div class="testimonials-grid">
       <div class="testimonial-card">
@@ -175,17 +261,17 @@ title: Home
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ═══════════════ CTA ═══════════════ -->
   <section class="cta-section">
-    <h2>Ready to defend smarter?</h2>
-    <p>Start with fundamentals or jump straight into the topic that matters most for your role right now.</p>
+    <h2>Ready to Defend Smarter?</h2>
+    <p>Start with the fundamentals or jump straight into the topic that matters most for your role right now.</p>
     <div class="cta-actions">
       <a href="{{ '/blog/' | relative_url }}" class="btn btn--lg btn--cta-primary">Browse All Articles →</a>
       <a href="{{ '/skills/' | relative_url }}" class="btn btn--lg btn--cta-secondary">Explore Topics</a>
     </div>
   </section>
 
-  <!-- Newly Posted -->
+  <!-- ═══════════════ RECENT POSTS ═══════════════ -->
   <div class="section-header">
     <h2>Newly Posted</h2>
     <a href="{{ '/blog/' | relative_url }}">all posts →</a>
