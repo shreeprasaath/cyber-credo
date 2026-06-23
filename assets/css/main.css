@@ -550,6 +550,19 @@ button { font-family: inherit; }
   box-shadow: 0 6px 0 var(--green-shadow);
 }
 
+.hero-card--illustration {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-illustration {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Floating sticker decorations */
 .sticker {
   position: absolute;

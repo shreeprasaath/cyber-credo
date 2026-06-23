@@ -26,7 +26,7 @@ title: Home
       </div>
     </div>
 
-    <!-- Right: reading progress widget -->
+    <!-- Right: decorative illustration -->
     <div class="hero-widget">
 
       <!-- Decorative stickers -->
@@ -34,23 +34,55 @@ title: Home
       <div class="sticker sticker--br" aria-hidden="true">⭐</div>
       <div class="sticker sticker--bl" aria-hidden="true">🔐</div>
 
-      <!-- Main card -->
-      <div class="hero-card">
-        <div class="hero-card-header">
-          <div class="hero-card-icon" aria-hidden="true">📊</div>
-          <div>
-            <div class="hero-card-title">SIEM Fundamentals</div>
-            <div class="hero-card-meta">12 guides · 3h reading</div>
-          </div>
-        </div>
-        <div class="hero-card-progress-row">
-          <span class="hero-card-progress-label">Reading Progress</span>
-          <span class="hero-card-progress-pct">65%</span>
-        </div>
-        <div class="hero-card-bar">
-          <div class="hero-card-bar-fill" style="width: 65%"></div>
-        </div>
-        <a href="{{ '/blog/' | relative_url }}" class="hero-card-btn">Continue Reading →</a>
+      <!-- Illustration card -->
+      <div class="hero-card hero-card--illustration">
+        <svg viewBox="0 0 280 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="hero-illustration">
+
+          <!-- Background grid lines -->
+          <line x1="0" y1="55" x2="280" y2="55" stroke="#e8dfd5" stroke-width="1"/>
+          <line x1="0" y1="110" x2="280" y2="110" stroke="#e8dfd5" stroke-width="1"/>
+          <line x1="0" y1="165" x2="280" y2="165" stroke="#e8dfd5" stroke-width="1"/>
+
+          <!-- Bar chart — activity/detection data -->
+          <rect x="22" y="130" width="22" height="60" rx="6" fill="#bbf7d0"/>
+          <rect x="55" y="95"  width="22" height="95" rx="6" fill="#22c55e"/>
+          <rect x="88" y="115" width="22" height="75" rx="6" fill="#bbf7d0"/>
+          <rect x="121" y="70" width="22" height="120" rx="6" fill="#22c55e"/>
+          <rect x="154" y="100" width="22" height="90" rx="6" fill="#bbf7d0"/>
+          <rect x="187" y="60" width="22" height="130" rx="6" fill="#22c55e"/>
+          <rect x="220" y="85" width="22" height="105" rx="6" fill="#bbf7d0"/>
+
+          <!-- Trend line -->
+          <polyline points="33,148 66,108 99,130 132,84 165,114 198,72 231,96"
+            stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+          <!-- Trend line dots -->
+          <circle cx="33"  cy="148" r="4" fill="#16a34a"/>
+          <circle cx="66"  cy="108" r="4" fill="#16a34a"/>
+          <circle cx="99"  cy="130" r="4" fill="#16a34a"/>
+          <circle cx="132" cy="84"  r="4" fill="#16a34a"/>
+          <circle cx="165" cy="114" r="4" fill="#16a34a"/>
+          <circle cx="198" cy="72"  r="4" fill="#22c55e" stroke="#16a34a" stroke-width="2"/>
+          <circle cx="231" cy="96"  r="4" fill="#16a34a"/>
+
+          <!-- Alert badge top-right -->
+          <rect x="188" y="10" width="82" height="32" rx="10" fill="#fecaca" stroke="#1e1b2e" stroke-width="1.5"/>
+          <circle cx="204" cy="26" r="5" fill="#ef4444"/>
+          <rect x="214" y="20" width="48" height="5" rx="2.5" fill="#1e1b2e" opacity="0.35"/>
+          <rect x="214" y="29" width="32" height="5" rx="2.5" fill="#1e1b2e" opacity="0.2"/>
+
+          <!-- Shield icon top-left -->
+          <rect x="10" y="10" width="36" height="36" rx="10" fill="#bfdbfe" stroke="#1e1b2e" stroke-width="1.5"/>
+          <path d="M28 16l10 4v6c0 5.5-4 10-10 12-6-2-10-6.5-10-12v-6l10-4z" fill="#2563eb" opacity="0.8"/>
+          <path d="M24 24l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Status pill bottom -->
+          <rect x="70" y="192" width="140" height="22" rx="11" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+          <circle cx="84" cy="203" r="4" fill="#fff" opacity="0.8"/>
+          <rect x="93" y="198" width="70" height="4" rx="2" fill="#fff" opacity="0.85"/>
+          <rect x="93" y="206" width="45" height="4" rx="2" fill="#fff" opacity="0.6"/>
+
+        </svg>
       </div>
 
     </div>
@@ -169,54 +201,6 @@ title: Home
     </div>
     <div class="courses-cta">
       <a href="{{ '/skills/' | relative_url }}" class="btn">View all 9 topic areas →</a>
-    </div>
-  </section>
-
-  <!-- ═══════════════ READING PATH ═══════════════ -->
-  <section class="progress-section">
-    <div class="progress-section-inner">
-      <div class="progress-section-header">
-        <h2>📍 Suggested Reading Order</h2>
-        <p>New to blue team? Here's a suggested path through the resources — each topic builds on the last.</p>
-      </div>
-      <div class="learning-path">
-        <div class="path-step path-step--done">
-          <div class="path-step-circle">✓</div>
-          <div class="path-step-info">
-            <h4>Linux Fundamentals</h4>
-            <span class="step-meta">Command line, file systems, process management, shell scripting</span>
-            <div class="path-progress-bar"><div style="width:100%"></div></div>
-          </div>
-          <span class="step-badge step-badge--done">Read</span>
-        </div>
-        <div class="path-step path-step--active">
-          <div class="path-step-circle">→</div>
-          <div class="path-step-info">
-            <h4>SIEM Fundamentals</h4>
-            <span class="step-meta">Log ingestion, SPL/KQL queries, correlation rules, alert logic</span>
-            <div class="path-progress-bar"><div style="width:65%"></div></div>
-          </div>
-          <span class="step-badge step-badge--active">Reading</span>
-        </div>
-        <div class="path-step path-step--locked">
-          <div class="path-step-circle">📖</div>
-          <div class="path-step-info">
-            <h4>Threat Hunting</h4>
-            <span class="step-meta">Hypothesis-driven hunting, behavioural analytics, MITRE ATT&amp;CK mapping</span>
-            <div class="path-progress-bar"><div style="width:0%"></div></div>
-          </div>
-          <span class="step-badge step-badge--locked">Explore Next</span>
-        </div>
-        <div class="path-step path-step--locked">
-          <div class="path-step-circle">📖</div>
-          <div class="path-step-info">
-            <h4>Incident Response</h4>
-            <span class="step-meta">Playbooks, triage, containment, and post-incident review</span>
-            <div class="path-progress-bar"><div style="width:0%"></div></div>
-          </div>
-          <span class="step-badge step-badge--locked">Explore Next</span>
-        </div>
-      </div>
     </div>
   </section>
 
